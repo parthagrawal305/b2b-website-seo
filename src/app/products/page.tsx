@@ -61,12 +61,12 @@ export default function ProductsPage() {
                 className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100"
               >
                 {/* Product Image */}
-                <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+                <div className="aspect-square bg-white relative overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain p-4"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   />
                   <div className="absolute top-3 right-3 bg-[var(--color-primary)] text-white text-xs font-medium px-2 py-1 rounded-lg">

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import { FileText, Phone, ArrowRight, Lock, Zap, Flame, Settings, Filter } from 'lucide-react';
+import { FileText, Phone, ArrowRight, Lock, Zap, Flame, Settings } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "Ball Valves - Flanged, Screwed, Actuated | Manufacturers in India",
@@ -16,7 +16,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Three Piece Design Long Stem Flanged End Ball Valve (FB)",
     class: "#150",
     image: "/images/products/c574b8_c777a03250d84b01905cb8d0f4aa603f~mv2.png",
-    href: "/products/ball-valves/three-piece-long-stem-flanged",
     design: "Three-Piece",
     endConnection: "Flanged"
   },
@@ -25,7 +24,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Two Piece Design Flanged End Ball Valve (FB)",
     class: "#150",
     image: "/images/products/201d8f_61d8362b3abb45c79cff28be31df3dbb~mv2.jpg",
-    href: "/products/ball-valves/two-piece-flanged-fb",
     design: "Two-Piece",
     endConnection: "Flanged"
   },
@@ -34,7 +32,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Two Piece Design Flanged Ball Valve (FB) (Fire Safe)",
     class: "#150",
     image: "/images/products/201d8f_f42fb888b6374c47b3cbb4158a8e53e3~mv2.jpg",
-    href: "/products/ball-valves/two-piece-flanged-fire-safe",
     design: "Two-Piece",
     endConnection: "Flanged",
     badge: "Fire Safe"
@@ -44,7 +41,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Three Piece Design Flanged Ball Valve (FB)",
     class: "#150",
     image: "/images/products/201d8f_4e2bb9a885594042a4ef9a6135c735af~mv2.jpg",
-    href: "/products/ball-valves/three-piece-flanged-fb",
     design: "Three-Piece",
     endConnection: "Flanged"
   },
@@ -53,7 +49,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Two Piece Design Long Stem Flanged Ball Valve (RB)",
     class: "#150",
     image: "/images/products/201d8f_185379c1bbdf4deea7a974b64303f565~mv2.jpg",
-    href: "/products/ball-valves/two-piece-long-stem-rb",
     design: "Two-Piece",
     endConnection: "Flanged"
   },
@@ -62,7 +57,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Automatic Ball Valve",
     class: "#150",
     image: "/images/products/201d8f_56e8af8b419f41929b0b2cacc2d1a8ae~mv2.jpg",
-    href: "/products/ball-valves/automatic",
     design: "Actuated",
     endConnection: "Flanged",
     badge: "Automated"
@@ -72,7 +66,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Three Piece Design Long Stem SE/SW/BW Ball Valve (FB)",
     class: "#150",
     image: "/images/products/201d8f_2759cf4717cb4397bc4455f5ecd9f9f0~mv2.jpg",
-    href: "/products/ball-valves/three-piece-long-stem-se-sw-bw",
     design: "Three-Piece",
     endConnection: "Socket/Butt Weld"
   },
@@ -81,7 +74,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "One Piece Design Screwed Ball Valve (FB)",
     class: "#150",
     image: "/images/products/201d8f_73d4ffc5fadb4504a612bff3fc0548a1~mv2.jpg",
-    href: "/products/ball-valves/one-piece-screwed",
     design: "One-Piece",
     endConnection: "Screwed"
   },
@@ -90,7 +82,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Two Piece Design Flanged Ball Valve (RB)",
     class: "#150",
     image: "/images/products/201d8f_5717d66745e6448cb74f984188c6245b~mv2.jpg",
-    href: "/products/ball-valves/two-piece-flanged-rb",
     design: "Two-Piece",
     endConnection: "Flanged"
   },
@@ -99,7 +90,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Three Piece Design Three Way S/E, S/W, B/W Ball Valve (RB)",
     class: "#150",
     image: "/images/products/201d8f_c5829affe68048969bb65b244df8cef7~mv2.jpg",
-    href: "/products/ball-valves/three-piece-three-way-se-sw-bw",
     design: "Three-Piece",
     endConnection: "Socket/Butt Weld",
     badge: "3-Way"
@@ -109,7 +99,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Three Piece Design Tri Clover End Ball Valve",
     class: "#150",
     image: "/images/products/201d8f_7a18a7302ef044f98961d472d6d568a1~mv2.jpg",
-    href: "/products/ball-valves/tri-clover",
     design: "Three-Piece",
     endConnection: "Tri-Clover",
     badge: "Sanitary"
@@ -119,7 +108,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Three Piece Design Forged Steel Ball Valve A105",
     class: "#800",
     image: "/images/products/201d8f_dc9b9c06396e4600a2b46119d74e2df3~mv2.jpg",
-    href: "/products/ball-valves/forged-steel-a105",
     design: "Three-Piece",
     endConnection: "Socket/Screwed",
     badge: "High Pressure"
@@ -129,7 +117,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Two Piece Design Long Stem Flanged End Ball Valve (FB)",
     class: "#150",
     image: "/images/products/201d8f_b5fbf02960284947a436cb14f607b46f~mv2.jpg",
-    href: "/products/ball-valves/two-piece-long-stem-flanged",
     design: "Two-Piece",
     endConnection: "Flanged"
   },
@@ -138,7 +125,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "One Piece Design Flanged Ball Valve (FB)",
     class: "#150, #300",
     image: "/images/products/201d8f_8c1e88b2dbbe49d3ad98652238bb635a~mv2.jpg",
-    href: "/products/ball-valves/one-piece-flanged",
     design: "One-Piece",
     endConnection: "Flanged"
   },
@@ -147,7 +133,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Three Piece Design S/E, S/W, B/W Ball Valve (FB)",
     class: "#150",
     image: "/images/products/201d8f_344c11df80584170bb1f2b414e184d7c~mv2.jpg",
-    href: "/products/ball-valves/three-piece-se-sw-bw",
     design: "Three-Piece",
     endConnection: "Socket/Butt Weld"
   },
@@ -156,7 +141,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Three Piece Design Three Way Flanged Ball Valve (RB)",
     class: "#150",
     image: "/images/products/201d8f_c376dd1d0f30497fa44dcd432985a050~mv2.jpg",
-    href: "/products/ball-valves/three-piece-three-way-flanged",
     design: "Three-Piece",
     endConnection: "Flanged",
     badge: "3-Way"
@@ -166,7 +150,6 @@ const BALL_VALVE_PRODUCTS = [
     name: "Three Piece Design OD Base Ball Valve",
     class: "#150",
     image: "/images/products/201d8f_410b7bbb108941a9b8e52343ea1984fc~mv2.jpg",
-    href: "/products/ball-valves/three-piece-od-base",
     design: "Three-Piece",
     endConnection: "OD Base"
   }
@@ -196,7 +179,7 @@ export default function BallValvesPage() {
               flanged ball valves, screwed ball valves, pneumatically actuated ball valves, and more.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/enquiry" className="btn-primary">
+              <Link href="/enquiry?product=Ball Valves" className="btn-primary">
                 Request Quote
                 <ArrowRight className="w-5 h-5" />
               </Link>
@@ -287,35 +270,35 @@ export default function BallValvesPage() {
         </div>
       </section>
 
-      {/* Products Grid - Like Wix Website */}
+      {/* Products Grid - Clean and Professional */}
       <section className="pb-16 bg-white">
         <div className="container-custom">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {BALL_VALVE_PRODUCTS.map((product) => (
               <div 
                 key={product.id}
-                className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-[var(--color-accent)] transition-all duration-300"
+                className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:border-[var(--color-accent)] transition-shadow"
               >
-                {/* Product Image */}
-                <div className="relative aspect-square bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+                {/* Product Image - Smaller aspect ratio, no zoom */}
+                <div className="relative aspect-[4/3] bg-white overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain p-4"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   {/* Badge */}
                   {product.badge && (
-                    <div className="absolute top-4 left-4 bg-[var(--color-accent)] text-white text-xs font-bold px-3 py-1 rounded-full">
+                    <div className="absolute top-3 left-3 bg-[var(--color-accent)] text-white text-xs font-bold px-3 py-1 rounded-full">
                       {product.badge}
                     </div>
                   )}
                 </div>
                 
                 {/* Product Info */}
-                <div className="p-5 border-t border-gray-100">
-                  <h3 className="font-bold text-[var(--color-primary)] mb-2 group-hover:text-[var(--color-accent)] transition-colors line-clamp-2">
+                <div className="p-4 border-t border-gray-100">
+                  <h3 className="font-semibold text-[var(--color-primary)] mb-2 group-hover:text-[var(--color-accent)] transition-colors text-sm leading-tight">
                     {product.name}
                   </h3>
                   <div className="flex items-center justify-between">
@@ -324,7 +307,7 @@ export default function BallValvesPage() {
                       <span className="ml-2 font-semibold text-[var(--color-primary)]">{product.class}</span>
                     </div>
                     <Link 
-                      href="/enquiry"
+                      href={`/enquiry?product=${encodeURIComponent(product.name)}`}
                       className="text-[var(--color-accent)] text-sm font-semibold hover:underline flex items-center gap-1"
                     >
                       Enquire <ArrowRight className="w-4 h-4" />
@@ -513,7 +496,7 @@ export default function BallValvesPage() {
             <p className="text-[var(--color-text-muted)] mb-8">
               Share your requirements and our team will get back to you with the best solution
             </p>
-            <Link href="/enquiry" className="btn-primary inline-flex">
+            <Link href="/enquiry?product=Ball Valves" className="btn-primary inline-flex">
               Request Quote
               <ArrowRight className="w-5 h-5" />
             </Link>
@@ -532,7 +515,7 @@ export default function BallValvesPage() {
             Our technical team can help you select the right valve.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/enquiry" className="bg-white text-[var(--color-accent)] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
+            <Link href="/enquiry?product=Ball Valves" className="bg-white text-[var(--color-accent)] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
               Get a Quote
               <ArrowRight className="w-5 h-5" />
             </Link>

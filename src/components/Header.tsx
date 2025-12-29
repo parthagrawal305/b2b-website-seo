@@ -29,29 +29,18 @@ export default function Header() {
     >
       <div className="container-custom">
         <nav className="flex items-center justify-between">
-          {/* Logo - Use filter to invert on dark bg */}
-          <Link href="/" className="flex items-center gap-3 group">
+          {/* Logo - Image only, text is part of logo */}
+          <Link href="/" className="flex items-center group">
             <Image
               src="/images/logo/unison-logo.png"
-              alt="Unison Valves Logo"
-              width={48}
+              alt="Unison Valves - Industrial Valve Manufacturers"
+              width={160}
               height={48}
-              className={`w-12 h-12 transition-all ${
+              className={`h-12 w-auto transition-all ${
                 isScrolled ? '' : 'brightness-0 invert'
               }`}
+              priority
             />
-            <div className="hidden sm:block">
-              <div className={`font-bold text-xl transition-colors ${
-                isScrolled ? 'text-[var(--color-primary)]' : 'text-white'
-              }`}>
-                UNISON
-              </div>
-              <div className={`text-xs tracking-widest transition-colors ${
-                isScrolled ? 'text-[var(--color-text-muted)]' : 'text-white/80'
-              }`}>
-                VALVES
-              </div>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -189,4 +178,3 @@ export default function Header() {
     </header>
   );
 }
-

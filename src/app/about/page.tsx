@@ -1,14 +1,14 @@
-import Link from 'next/link';
-import { Metadata } from 'next';
-import { TRUST_STATS, CERTIFICATIONS, INDUSTRIES, COMPANY } from '@/lib/constants';
+'use client';
 
-export const metadata: Metadata = {
-  title: "About Us - 40+ Years of Valve Manufacturing Excellence",
-  description: "Unison Valves Pvt. Ltd. - India's trusted industrial valve manufacturer since 1984. ISO 9001:2015 certified, DNV fire safety certified. Learn about our journey, quality policy, and commitment to excellence.",
-  keywords: ["about Unison Valves", "valve manufacturer history", "ISO certified valve company", "Pune valve manufacturer"],
-};
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { TRUST_STATS, CERTIFICATIONS, INDUSTRIES, COMPANY } from '@/lib/constants';
+import { Play, X } from 'lucide-react';
 
 export default function AboutPage() {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
   return (
     <>
       {/* Hero Section */}
@@ -30,7 +30,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Company Overview */}
+      {/* Company Overview with Video */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -54,27 +54,72 @@ export default function AboutPage() {
               </div>
             </div>
             
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-6">
-              {TRUST_STATS.map((stat) => (
-                <div key={stat.label} className="bg-[var(--color-background-alt)] rounded-2xl p-8 text-center">
-                  <div className="text-4xl sm:text-5xl font-bold text-[var(--color-primary)]">
-                    {stat.number}<span className="text-[var(--color-accent)]">{stat.suffix}</span>
+            {/* Video Section */}
+            <div className="relative">
+              {!isVideoPlaying ? (
+                <div 
+                  className="relative aspect-video rounded-2xl overflow-hidden cursor-pointer group shadow-xl"
+                  onClick={() => setIsVideoPlaying(true)}
+                >
+                  <Image
+                    src="/images/about-video-thumbnail.jpg"
+                    alt="About Unison Valves - Watch our company video"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                    <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                      <Play className="w-8 h-8 text-[var(--color-primary)] ml-1" fill="currentColor" />
+                    </div>
                   </div>
-                  <div className="text-[var(--color-text-muted)] mt-2">{stat.label}</div>
+                  <div className="absolute bottom-4 left-4 bg-black/60 text-white px-3 py-1 rounded text-sm">
+                    Watch Our Story
+                  </div>
                 </div>
-              ))}
+              ) : (
+                <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
+                  <video
+                    src="/videos/about-unison-valves.mp4"
+                    autoPlay
+                    controls
+                    className="w-full h-full object-cover"
+                  />
+                  <button
+                    onClick={() => setIsVideoPlaying(false)}
+                    className="absolute top-4 right-4 w-10 h-10 bg-black/60 rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-colors"
+                    aria-label="Close video"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
 
+      {/* Stats */}
+      <section className="py-12 bg-[var(--color-background-alt)]">
+        <div className="container-custom">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {TRUST_STATS.map((stat) => (
+              <div key={stat.label} className="bg-white rounded-2xl p-8 text-center shadow-sm">
+                <div className="text-4xl sm:text-5xl font-bold text-[var(--color-primary)]">
+                  {stat.number}<span className="text-[var(--color-accent)]">{stat.suffix}</span>
+                </div>
+                <div className="text-[var(--color-text-muted)] mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Vision & Quality Policy */}
-      <section className="section-padding bg-[var(--color-background-alt)]">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Vision */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <div className="bg-[var(--color-background-alt)] rounded-2xl p-8">
               <div className="w-16 h-16 rounded-2xl bg-[var(--color-primary)]/10 flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -88,7 +133,7 @@ export default function AboutPage() {
             </div>
 
             {/* Quality Policy */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <div className="bg-[var(--color-background-alt)] rounded-2xl p-8">
               <div className="w-16 h-16 rounded-2xl bg-[var(--color-accent)]/10 flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -104,7 +149,7 @@ export default function AboutPage() {
       </section>
 
       {/* Certifications */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[var(--color-background-alt)]">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-[var(--color-accent)] font-semibold text-sm uppercase tracking-wider">
@@ -120,7 +165,7 @@ export default function AboutPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {CERTIFICATIONS.map((cert) => (
-              <div key={cert.name} className="bg-[var(--color-background-alt)] rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+              <div key={cert.name} className="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
                 <div className="text-4xl mb-4">{cert.icon}</div>
                 <h3 className="font-bold text-[var(--color-primary)] mb-2">{cert.name}</h3>
                 <p className="text-sm text-[var(--color-text-muted)]">{cert.description}</p>
@@ -154,9 +199,9 @@ export default function AboutPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="section-padding bg-[var(--color-background-alt)]">
+      <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-lg">
+          <div className="bg-[var(--color-background-alt)] rounded-3xl p-8 sm:p-12">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-3xl font-bold text-[var(--color-primary)] mb-4">
@@ -192,4 +237,3 @@ export default function AboutPage() {
     </>
   );
 }
-

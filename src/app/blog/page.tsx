@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import { getAllBlogPosts } from '@/lib/blog';
 import { Calendar, User, ArrowRight, Tag } from 'lucide-react';
@@ -7,6 +8,16 @@ export const metadata: Metadata = {
   title: "Blog - Industrial Valve Knowledge & Insights",
   description: "Expert insights on industrial valves, ball valves, butterfly valves, steam traps, and flow control solutions. Technical guides, application notes, and industry best practices from Unison Valves.",
   keywords: ["valve blog", "industrial valve guide", "ball valve technical", "valve selection guide", "fire safe valve", "valve standards"],
+};
+
+// Blog post images - mapped to actual product images for visual consistency
+const BLOG_IMAGES: Record<string, string> = {
+  'ball-valve-manufacturers-india': '/images/products/c574b8_c777a03250d84b01905cb8d0f4aa603f~mv2.png',
+  'butterfly-valves-manufacturer-india': '/images/products/201d8f_4b1e62750cd740438ac36bd296140df2~mv2.jpg',
+  'comparing-gate-globe-ball-butterfly-valves': '/images/products/201d8f_61d8362b3abb45c79cff28be31df3dbb~mv2.jpg',
+  'fire-safe-ball-valves-importance-applications': '/images/products/201d8f_f42fb888b6374c47b3cbb4158a8e53e3~mv2.jpg',
+  'stainless-steel-ball-valves-chemical-plants': '/images/products/201d8f_2759cf4717cb4397bc4455f5ecd9f9f0~mv2.jpg',
+  'valve-pressure-testing-guide': '/images/products/201d8f_dc9b9c06396e4600a2b46119d74e2df3~mv2.jpg',
 };
 
 export default function BlogPage() {
@@ -53,14 +64,14 @@ export default function BlogPage() {
                   className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100"
                 >
                   {/* Post Image */}
-                  <div className="aspect-video bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-light)] relative">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <svg className="w-16 h-16 text-white/30" viewBox="0 0 100 100" fill="currentColor">
-                        <circle cx="50" cy="50" r="40" strokeWidth="3" stroke="currentColor" fill="none" />
-                        <circle cx="50" cy="50" r="20" fill="currentColor" opacity="0.3" />
-                        <circle cx="50" cy="50" r="8" fill="currentColor" />
-                      </svg>
-                    </div>
+                  <div className="aspect-video relative bg-gray-100 overflow-hidden">
+                    <Image
+                      src={BLOG_IMAGES[post.slug] || '/images/products/c574b8_c777a03250d84b01905cb8d0f4aa603f~mv2.png'}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                   </div>
 
                   {/* Post Info */}
