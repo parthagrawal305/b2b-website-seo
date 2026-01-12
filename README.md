@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏭 SEO Website Redesign Experiment
 
-## Getting Started
+Took a real industrial manufacturer's live website — just the URL, nothing else — and tried to build a fully SEO-optimized redesign entirely through AI conversations.
 
-First, run the development server:
+The question was simple: *can you go from "here's a URL" to "this ranks #1" using only vibe coding?*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![MDX](https://img.shields.io/badge/MDX-1B1F24?style=flat-square&logo=mdx&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## What happened
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Started by pasting the existing site URL into Google AI Studio and asking for a full SEO audit. Got back a competitive gap analysis, missing keywords, and a content strategy — all from one prompt.
 
-## Learn More
+Then used Cursor to scaffold a Next.js site informed by that strategy. The AI had full context from 12+ strategy documents (keyword research, schema markup plans, featured snippet targeting, blog editorial calendar), so every page it generated was already optimized.
 
-To learn more about Next.js, take a look at the following resources:
+The project ended up with more planning docs than code — which is kind of the point. SEO is a content problem, not an engineering problem, and AI is really good at content problems.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## The strategy docs
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+All generated through AI conversations:
 
-## Deploy on Vercel
+- **SEO Keyword Strategy** — 50+ keywords mapped to pages
+- **Blog Content Strategy** — 12-month editorial calendar
+- **Featured Snippets Plan** — targeting paragraph, list, and table snippets
+- **Schema/Structured Data** — JSON-LD for Product, Organization, FAQ, Breadcrumb
+- **Competitive Analysis** — gap analysis vs top 3 competitors
+- **Conversion Strategy** — trust signals, video content, CTA optimization
+- **Site Architecture** — URL hierarchy and internal linking plan
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> **Note:** This is an independent experiment. I'm not affiliated with the business whose site I redesigned. Just wanted to see how far AI-driven SEO could go.
