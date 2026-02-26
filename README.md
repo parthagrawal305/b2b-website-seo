@@ -32,3 +32,7 @@ All generated through AI conversations:
 - **Site Architecture** — URL hierarchy and internal linking plan
 
 > **Note:** This is an independent experiment. I'm not affiliated with the business whose site I redesigned. Just wanted to see how far AI-driven SEO could go.
+
+---
+
+<sub>README generated with AI ✨</sub>
